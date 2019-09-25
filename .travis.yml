@@ -1,7 +1,9 @@
 sudo: required
 services:
   - docker
+  
 before_install:
-  - docker build -t SibiSS/docker-react -f Dockerfile.dev .
+  - docker build -t sibiss/docker-react -f Dockerfile.dev .
+
 script:
-  - docker run SibiSS/docker-react npm run test -- --coverage
+  - docker run sibiss/docker-react npm run test -- --coverage
