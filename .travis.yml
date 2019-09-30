@@ -9,12 +9,12 @@ script:
   - docker run -e CI=true sibiss/docker-react npm run test
 
 after_success:
-  - docker build -t sibis/docker-build ./build
-  - docker build -t sibis/docker-public ./public
+  - docker build -t sibiss/docker-build ./build
+  - docker build -t sibiss/docker-public ./public
   - docker build -t sibis/docker-src ./src
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   
-  - docker push sibis/docker-build
-  - docker push sibis/docker-public
-  - docker push sibis/docker-src
+  - docker push sibiss/docker-build
+  - docker push sibiss/docker-public
+  - docker push sibiss/docker-src
