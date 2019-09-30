@@ -15,6 +15,6 @@ after_success:
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   
-  - docker push sibiss/multi-build
-  - docker push sibiss/multi-public
-  - docker push sibiss/multi-src
+  - docker push sibiss/docker-build
+  - docker push sibiss/docker-public
+  - docker push sibiss/docker-src
